@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Frank's Catering Service</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            body {
+                font-family: "Times New Roman", Georgia, Serif;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+            }
+        </style>
+    </head>
+<body>
+<style>
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body{
+  width: 99%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+  border-radius: 50%;
+}
+
+input, button{
+  border:none;
+  background: none;
+}
+
+.cont{
+  overflow: hidden;
+  position: relative;
+  width: 900px;
+  height: 550px;
+  background:#FEFFED;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 15px;
+}
+
+.form{
+  position: relative;
+  width: 640px;
+  height: 100%;
+  padding: 50px 30px;
+  -webkit-transition:-webkit-transform 1.2s ease-in-out;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+h2{
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+}
+
+label{
+  display: block;
+  width: 260px;
+  margin: 25px auto 0;
+  text-align: center;
+}
+
+label span{
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+input{
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 16px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(109, 93, 93, 0.4);
+  text-align: center;
+  font-family: 'Nunito', sans-serif; 
+}
+
+button{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background: rgb(131, 128, 128);
+  transition: .5s;
+}
+
+.submit:hover{
+  transition: .5s;
+  background: #000;
+}
+
+.forgot-pass{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0c0101;
+  cursor: pointer;
+}
+
+.forgot-pass:hover{
+  color: red;
+}
+
+.social-media{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-media ul{
+  list-style: none;
+}
+
+.social-media ul li{
+  display: inline-block;
+  cursor: pointer;
+  margin: 25px 10px;
+}
+
+.social-media img{
+  width: 20px;
+  height: 20px;
+}
+
+.sub-cont{
+  overflow: hidden;
+  position: absolute;
+  left: 640px;
+  top: 0;
+  width: 900px;
+  height: 100%;
+  padding-left: 260px;
+  background: #FEFFED;
+  -webkit-transition: -webkit-transform 1.2s ease-in-out;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+}
+
+.cont.s-signup .sub-cont{
+  -webkit-transform:translate3d(-640px, 0, 0);
+          transform:translate3d(-640px, 0, 0);
+}
+
+.img{
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  padding-top: 360px;
+}
+
+.img:before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 900px;
+  height: 100%;
+  background-image: url(images/bg.jpg);
+  background-size: cover;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.img:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+.cont.s-signup .img:before{
+  -webkit-transform:translate3d(640px, 0, 0);
+          transform:translate3d(640px, 0, 0);
+}
+
+.img-text{
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+  -webkit-transition:-webkit-transform 1.2s ease-in-out;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.img-text h2{
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.img-text p{
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cont.s-signup .img-text.m-up{
+  -webkit-transform:translateX(520px);
+          transform:translateX(520px);
+}
+
+.img-text.m-in{
+  -webkit-transform:translateX(-520px);
+          transform:translateX(-520px);
+}
+
+.cont.s-signup .img-text.m-in{
+  -webkit-transform:translateX(0);
+          transform:translateX(0);
+}
+
+
+.sign-in{
+  padding-top: 65px;
+  -webkit-transition-timing-function:ease-out;
+          transition-timing-function:ease-out;
+}
+
+.cont.s-signup .sign-in{
+  -webkit-transition-timing-function:ease-in-out;
+          transition-timing-function:ease-in-out;
+  -webkit-transition-duration:1.2s;
+          transition-duration:1.2s; 
+  -webkit-transform:translate3d(640px, 0, 0);
+          transform:translate3d(640px, 0, 0);
+}
+
+.img-btn{
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  width: 100px;
+  height: 36px;
+  margin: 0 auto;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.img-btn:after{
+  content: '';
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 30px;
+}
+
+.img-btn span{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack:center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transition:-webkit-transform 1.2s;
+  transition: -webkit-transform 1.2s;
+  transition: transform 1.2s;
+  transition: transform 1.2s, -webkit-transform 1.2s;;
+}
+
+.img-btn span.m-in{
+  -webkit-transform:translateY(-72px);
+          transform:translateY(-72px);
+}
+
+.cont.s-signup .img-btn span.m-in{
+  -webkit-transform:translateY(0);
+          transform:translateY(0);
+}
+
+.cont.s-signup .img-btn span.m-up{
+  -webkit-transform:translateY(72px);
+          transform:translateY(72px);
+}
+
+.sign-up{
+  -webkit-transform:translate3d(-900px, 0, 0);
+          transform:translate3d(-900px, 0, 0);
+}
+
+.cont.s-signup .sign-up{
+  -webkit-transform:translate3d(0, 0, 0);
+          transform:translate3d(0, 0, 0);
+}
+</style>
+</head>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:2px;">
+
+      <a href="#home" class="w3-bar-item w3-button">Frank's Catering</a>
+      <!-- Right-sided navbar links. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+          <a href="home.html" class="w3-bar-item w3-button">Home</a>
+          <a href="login&signup.html" class="w3-bar-item w3-button">Login/Signup</a>
+      </div>
+  </div>
+</div>
+<body>
+  <title>Login & Registration Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="cont">
+    <div class="form sign-in">
+      <h2>Login</h2>
+      <label>
+        <span>Email Address</span>
+        <input type="email" name="email">
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" name="password">
+      </label>
+      <button class="submit" type="button">Sign In</button>
+     
+
+      <div class="social-media">
+        <ul>
+          <li><img src="https://www.iconsdb.com/icons/download/icon-sets/blue-paper/facebook-4-24.ico"></li>
+          <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAACNklEQVR4nGNgwALO+PhoXA0La7yXmbn0Rlzc3EthYS1nvbw0GQiBCwEBao/y8o5/6uj4+b2//z8Mf+vt/f+ysvLDzYSEbTgNuhQZGfCusfE9isa+vv8f29r+f+/rg4tdjYy8dCU0lA3V5tBQxfeNjR9gil7X1Ly8FhMz/ayPT/DZwEC/q1FRvQ9zcs48yMq6cykgwBLD9iu9qfthmh9kZ587YmXFi+E9V1fuswEBmM7fu8BD+dvj6T8/3Zz49XFN8YsTHh58DKSA89uSW/+/W/wfhM9tTp2CLh/TeWRp6sTTi7Hh2M6D4Qy3D5csB2n+93bR/0OLQj3QDciffeVB9/YP/7HhlAmnZjPcPoIw4ODSIHd0AzImn39Wv+rJf2TcufUd2IDkCafnMpzfmNQO9sLbxf9PbEyZgG5AQMUWY2Qc13VkLcwFsT3HOsCB+OnBlB8Pr0/8Mv/kklfRi3NxBqJH/Ta+muWPXoE0t218/SuoZpcqWGL6jrbDux7s/Q/C/QfmXEiaU4oRjWkzy/kzp5072739Pdj2gjnXTsAls9ZUy6+4vOE9zJClF9e8rNvSOzN3WX1IwcqmsLrNE2YvPr/69eorW7517njwp2Ht0w/hTQdQ00Tp+jav5ZfXvYMZAsI77u/5v/P+HjgfhKcdXfw6tueQD1Y/ZiyuUZ98eO6RjTe3/dx1H6EJhDfe2v570sF5J0BqcIURwr/z6zXK1nb0dO6auq5n74w1Veu729OWVmpgUwwAwI+pmGD8KyYAAAAASUVORK5CYII="></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img-text m-up">
+          <h1>New here?</h1>
+          <p>sign up and discover</p>
+        </div>
+        <div class="img-text m-in">
+          <h1>One of us?</h1>
+          <p>just sign in</p>
+        </div>
+        <div class="img-btn">
+          <span class="m-up">Sign Up</span>
+          <span class="m-in">Sign In</span>
+        </div>
+      </div>
+      <div class="form sign-up">
+        <h2>Sign Up</h2>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email">
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password">
+        </label>
+        <label>
+          <span>Confirm Password</span>
+          <input type="password" name="confirmpassword">
+        </label>
+        <button type="button" class="submit">Sign Up Now</button>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+     </div>
+     <script>
+        document.querySelector('.img-btn').addEventListener('click', function()
+	      {
+		    document.querySelector('.cont').classList.toggle('s-signup')
+	      }
+        );
+
+     </script>
+  </body>
+</html>
